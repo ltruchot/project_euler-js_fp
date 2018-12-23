@@ -1,5 +1,5 @@
 import {
-  combineSumMul3And5,
+  bestMultiplesOf3And5,
   getMultiplesOf3And5
 } from "./001-multiple_of_3_and_5";
 import { getEvenFibonnacciNumbers } from "./002-even_fibonacci_numbers";
@@ -10,8 +10,8 @@ suite("001 - multiples of 3 and 5", function() {
   benchmark(`getMultiplesOf3And5`, function() {
     getMultiplesOf3And5(testNbr);
   });
-  benchmark(`combineSumMul3And5`, function() {
-    combineSumMul3And5(testNbr);
+  benchmark(`bestMultiplesOf3And5`, function() {
+    bestMultiplesOf3And5(testNbr);
   });
   benchmark(`getEvenFibonnacciNumbers`, function() {
     getEvenFibonnacciNumbers(testNbr);
