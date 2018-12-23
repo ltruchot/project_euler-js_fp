@@ -12,8 +12,7 @@ export const getLargestPrimeFactor = (n, factor = 2) => {
       return factor;
     } else if (Number.isInteger(prod)) {
       return getLargestPrimeFactor(prod, factor);
-    } else {
-      factor++;
     }
+    factor++;
   }
 };

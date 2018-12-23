@@ -25,6 +25,9 @@ module.exports = function(config) {
     preprocessors: {
       "src/benchmark.js": ["webpack"]
     },
+    webpack: {
+      mode: "development"
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
