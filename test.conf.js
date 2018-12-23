@@ -3,6 +3,7 @@
 
 module.exports = function(config) {
   config.set({
+    mode: "development",
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },

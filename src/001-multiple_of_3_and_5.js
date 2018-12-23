@@ -3,12 +3,9 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
-
+import { checkMultipleOf3, checkMultipleOf5, sum1ToN } from "./utils";
 // mine
-const makeCheckMultipleOf = multiple => n => n % multiple === 0;
-const checkMultipleOf3 = makeCheckMultipleOf(3);
-const checkMultipleOf5 = makeCheckMultipleOf(5);
-export const multiplesOf3And5 = n =>
+export const getMultiplesOf3And5 = n =>
   Array(n - 1)
     .fill()
     .map((_, k) => k + 1)
@@ -19,9 +16,19 @@ export const multiplesOf3And5 = n =>
     );
 
 // best
-const sum1ToN = n => (n * (n + 1)) / 2;
 const makeSumMultiples = limit => a => sum1ToN(Math.floor((limit - 1) / a)) * a;
 const makeCombineSumMultiples = arr => limit => {
+  const getPrimeFactor = (n, factor) => {
+    while (factor) {
+      const prod = n / factor;
+      if (prod === 1) {
+        return factor;
+      } else if (Number.isInteger(prod)) {
+        return getPrimeFactor(prod, factor);
+      }
+      factor++;
+    }
+  };
   const sumMulUntilLimit = makeSumMultiples(limit);
   return (
     arr.reduce((a, c) => a + sumMulUntilLimit(c), 0) -

@@ -5,14 +5,15 @@ What is the largest prime factor of the number 600851475143 ?
 */
 
 // mine
-export const largestPrimeFactor = n => {
-  let pf = [];
-  for (let i = 0; i < n; i++) {
-    if (Number.isInteger(n / i)) {
-      pf.push(i);
+export const getLargestPrimeFactor = (n, factor = 2) => {
+  while (factor) {
+    const prod = n / factor;
+    if (prod === 1) {
+      return factor;
+    } else if (Number.isInteger(prod)) {
+      return getLargestPrimeFactor(prod, factor);
+    } else {
+      factor++;
     }
   }
-  return nbs;
 };
-
-console.log(largestPrimeFactor(600851475143));
