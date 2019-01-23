@@ -3,7 +3,7 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
-import { checkMultipleOf3, checkMultipleOf5, sum1ToN } from "./utils";
+import { checkMultipleOf3, checkMultipleOf5, sum1ToN } from "../utils";
 // intuition
 export const getMultiplesOf3And5 = n =>
   Array(n - 1)
@@ -18,17 +18,13 @@ export const getMultiplesOf3And5 = n =>
 // math
 const makeSumMultiples = limit => a => sum1ToN(Math.floor((limit - 1) / a)) * a;
 const makeCombineSumMultiples = arr => limit => {
-  const getPrimeFactor = (n, factor) => {
-    while (factor) {
-      const prod = n / factor;
-      if (prod === 1) {
-        return factor;
-      } else if (Number.isInteger(prod)) {
-        return getPrimeFactor(prod, factor);
-      }
-      factor++;
-    }
+  const getPrimeFactor = ([n, factor]) => {
+    const prod = n / factor;
+    return prod === 1
+      ? factor
+      : getPrimeFactor(Number.isInteger(prod) ? [prod, factor] : [n, ++factor]);
   };
+
   const sumMulUntilLimit = makeSumMultiples(limit);
   return (
     arr.reduce((a, c) => a + sumMulUntilLimit(c), 0) -

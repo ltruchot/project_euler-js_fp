@@ -1,9 +1,9 @@
 import {
   bestMultiplesOf3And5,
   getMultiplesOf3And5
-} from "./001-multiple_of_3_and_5";
-import { getEvenFibonnacciNumbers } from "./002-even_fibonacci_numbers";
-import { getLargestPrimeFactor } from "./003-largest_prime_factor";
+} from "./solutions/001-multiple_of_3_and_5";
+import { getEvenFibonnacciNumbers } from "./solutions/002-even_fibonacci_numbers";
+import { getLargestPrimeFactor } from "./solutions/003-largest_prime_factor";
 
 const testNbr = 1000000;
 suite("001 - multiples of 3 and 5", function() {

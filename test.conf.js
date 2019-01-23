@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Fri Dec 07 2018 16:05:24 GMT+0100 (Central European Standard Time)
-
+process.env.CHROME_BIN = require("puppeteer").executablePath();
 module.exports = function(config) {
   config.set({
     mode: "development",
@@ -33,7 +33,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ["progress", "kjhtml"],
+    reporters: ["mocha"],
 
     // web server port
     port: 9876,
@@ -50,7 +50,13 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ["Chrome"],
+    browsers: ["ChromeHeadlessNoSandbox"],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox"]
+      }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
