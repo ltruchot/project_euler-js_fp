@@ -6,7 +6,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 */
 import { checkMultipleOf3, checkMultipleOf5, sum1ToN } from "../utils";
 // intuition
-// warning: removed Tail Call Optimization in V8 will cause exeeded call stack on 10000+
+// warning: Tail Call Optimization is removed in V8, that will cause an exeeded call stack on 10000+
 export const getMultiplesOf3And5 = (max, total = 0, curr = 1) =>
   curr >= max
     ? total
