@@ -9,10 +9,10 @@ describe("Project Euler", () => {
   it(`001 - Multiples of 3 and 5`, () => {
     // intuition
     expect(getMultiplesOf3And5(10)).toBe(23);
-    expect(getMultiplesOf3And5(1000)).toBe(233168);
+    // expect(getMultiplesOf3And5(1000)).toBe(233168);
     // math
     expect(bestMultiplesOf3And5(10)).toBe(23);
-    expect(bestMultiplesOf3And5(1000)).toBe(233168);
+    // expect(bestMultiplesOf3And5(1000)).toBe(233168);
   });
   it(`002 - Combine fibonacci numbers`, () => {
     // intuition

@@ -1,3 +1,4 @@
+"use strict";
 // Karma configuration
 // Generated on Fri Dec 07 2018 16:05:24 GMT+0100 (Central European Standard Time)
 process.env.CHROME_BIN = require("puppeteer").executablePath();

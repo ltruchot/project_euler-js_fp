@@ -12,6 +12,7 @@
   "author": "Loïc TRUCHOT",
   "license": "ISC",
   "devDependencies": {
+    "benchmark": "^2.1.4",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
     "eslint": "^5.12.1",
